@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXN Design Co. | Jasa Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content">
+        <div id="lightbox-body"></div>
+        <h4 id="lightbox-caption"></h4>
+    </div>
+</div>
+
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">INX<span>DESIGN</span></div>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Katalog</a></li>
+                <li><a href="#pricing">Paket</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h5 class="blue-text">ARSITEK & VISUALISATOR 3D</h5>
+            <h1>Desain Bangunan <br>Modern & <span class="blue-text">Minimalis</span></h1>
+            <p>Solusi desain arsitektur terlengkap mulai dari denah 2D, model 3D, hingga rendering yang realistis.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn-main">Lihat Karya</a>
+                <a href="#pricing" class="btn-alt">Cek Paket</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section container">
+        <div class="section-header">
+            <h2>Katalog Proyek</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="image">Gambar</button>
+                <button class="filter-btn" data-filter="video">Animasi</button>
+            </div>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="item image">
+                <img src="C:\Users\Victus\Desktop\Website\Image(20).png">
+                <div class="overlay">Eksterior</div>
+            </div>
+            <div class="item video">
+        <img src="C:\Users\Victus\Desktop\Website\ScreenShot0d03874516314b2899bc6e9a68a3020e.png">
+        
+        <div class="overlay">
+            <div class="video-info">
+                <i class="fas fa-play-circle"></i>
+                <span>Video Rendering - ruko</span>
+            </div>
+        </div>
+    </div>
+            <div class="item image">
+                <img src="D:\D5\RBR\renferan\Image(13).png" alt="Living Room">
+                <div class="overlay">Interior</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+        <div class="container">
+            <h2 class="text-center">Paket Layanan</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="card-header"><i class="fas fa-pencil-ruler"></i><h3>Paket 2D</h3></div>
+                    <div class="price">Rp 500.000</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Denah & Tampak</li>
+                        <li><i class="fas fa-check"></i> Gambar Rencana Kerja</li>
+                        <li><i class="fas fa-check"></i> 2x Revisi</li>
+                    </ul>
+                    <button class="btn-order" onclick="openOrderModal('Paket 2D')">Pilih Paket</button>
+                </div>
+                <div class="price-card featured">
+                    <div class="card-header"><i class="fas fa-cube"></i><h3>Pro 3D & Render</h3></div>
+                    <div class="price">Rp 1.500.000</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Semua Fitur 2D</li>
+                        <li><i class="fas fa-check"></i> 3 Render Realistic</li>
+                        <li><i class="fas fa-check"></i> Unlimited Revisi</li>
+                    </ul>
+                    <button class="btn-order-alt" onclick="openOrderModal('Pro 3D & Render')">Pilih Paket</button>
+                </div>
+                <div class="price-card">
+                    <div class="card-header"><i class="fas fa-video"></i><h3>Full Animasi</h3></div>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Semua Fitur Pro</li>
+                        <li><i class="fas fa-check"></i> Video Cinematic 1 Menit</li>
+                        <li><i class="fas fa-check"></i> Revisi 3 Kali</li>
+                    </ul>
+                    <button class="btn-order" onclick="openOrderModal('Full Animasi')">Pilih Paket</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="selectedPackage" class="package-tag"></div>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp</label>
+                    <input type="tel" id="whatsapp" placeholder="0812xxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>Pesan Tambahan</label>
+                    <textarea id="note" rows="3" placeholder="Jelaskan keinginan desain Anda..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="section container">
+        <h2 class="text-center">Apa Kata Klien Kami?</h2>
+        <div class="testimonial-grid">
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"SAYA AKAN LAWAN"</p>
+                <div class="user-info">
+                    <strong>BAPAK JOKOWI</strong>
+                    <span>PRESIDEN RI-7</span>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"Terimakasih desain konohanya"</p>
+                <div class="user-info">
+                    <strong>NARUTO SIPUDDEN</strong>
+                    <span>HOKAGE KE 7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <section class="section bg-faq">
+        <div class="container small-container">
+            <h2 class="text-center">Pertanyaan Sering Diajukan (FAQ)</h2>
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Berapa lama proses pengerjaan desain?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Untuk paket 2D biasanya memakan waktu 3-7 hari kerja. Sedangkan untuk paket Pro 3D dan Animasi berkisar antara 7-14 hari kerja tergantung kerumitan proyek.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Apakah harga sudah termasuk jasa konstruksi?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Harga yang tertera adalah untuk jasa desain dan perencanaan (konsultansi). Namun, kami dapat memberikan estimasi biaya pembangunan (RAB) jika Anda membutuhkannya.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana sistem pembayarannya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pembayaran dilakukan dengan DP sebesar 30-50% di awal, dan pelunasan dilakukan setelah desain disetujui (sebelum file final tanpa watermark dikirim).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container">
+    <div class="review-box">
+        <h3 class="text-center">Berikan Penilaian Anda</h3>
+        <p class="text-center">Kepuasan Anda adalah prioritas kami. Bagikan pengalaman Anda!</p>
+        
+        <form id="reviewForm" class="rating-form">
+            <div class="star-rating">
+                <input type="radio" name="stars" id="star-5" value="5" required><label for="star-5">★</label>
+                <input type="radio" name="stars" id="star-4" value="4"><label for="star-4">★</label>
+                <input type="radio" name="stars" id="star-3" value="3"><label for="star-3">★</label>
+                <input type="radio" name="stars" id="star-2" value="2"><label for="star-2">★</label>
+                <input type="radio" name="stars" id="star-1" value="1"><label for="star-1">★</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="reviewerName" placeholder="Nama Anda" required>
+            </div>
+            <div class="form-group">
+                <textarea id="reviewerText" rows="3" placeholder="Tulis ulasan Anda di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn-main" style="width: 100%; border: none; cursor: pointer;">
+                Kirim Penilaian
+            </button>
+        </form>
+    </div>
+</section>
+
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>IXN Design Co.</h3>
+                <div class="socials">
+    <a href="https://www.instagram.com/USERNAME_ANDA/" target="_blank" rel="noopener noreferrer" title="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    
+    <a href="https://www.tiktok.com/@USERNAME_ANDA" target="_blank" rel="noopener noreferrer" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/USERNAME_ANDA/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    
+    <a href="https://www.youtube.com/@USERNAME_ANDA" target="_blank" rel="noopener noreferrer" title="YouTube">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-phone blue-text"></i> +62 838-2945-8495</p>
+                <p><i class="fas fa-envelope blue-text"></i> ixndesignco@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 IXN Design Co.</div>
+    </footer>
+    <script src="script.js"></script>
+    <a href="https://wa.me/6283829458495?text=Halo%20INXDesignCo.,%20saya%20ingin%20tanya%20mengenai%20layanan%20desain%20Anda." 
+   class="floating-wa" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat Admin</span>
+</a>
+</body>
+</html>
